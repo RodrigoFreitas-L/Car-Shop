@@ -29,7 +29,7 @@ class CarService implements IService<ICar> {
   public async read(): Promise<ICar[]> {
     const cars = await this._car.read();
 
-    if (!cars) throw Error(ErrorTypes.EntityNotFound);
+    if (!cars) { return []; }
 
     return cars;
   }
@@ -37,7 +37,7 @@ class CarService implements IService<ICar> {
     const parsed = CarZodSchema.safeParse(obj);
 
     if (!parsed.success) {
-      throw parsed.error;
+      throw Error(ErrorTypes.InvalidBody);
     }
 
     const updatedCar = await this._car.update(_id, parsed.data);
