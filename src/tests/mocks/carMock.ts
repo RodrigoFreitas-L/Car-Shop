@@ -39,4 +39,13 @@ const carUpdate:Partial<ICar> = {
   doorsQty: 2,
 };
 
-export { testCar, testCarWithId, testCarUpdating, carUpdate };
+const invalidCar:Partial<ICar> = {
+  model: 'asd',
+  year: 1900,
+  color: 'a',
+  buyValue: 100,
+  seatsQty: 2,
+  doorsQty: 2,
+};
+
+export { testCar, testCarWithId, testCarUpdating, carUpdate, invalidCar };

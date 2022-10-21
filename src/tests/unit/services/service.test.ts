@@ -66,7 +66,7 @@ describe('Car Service testing', () => {
         error = err;
       }
 
-      expect(error.message).to.be.eq(ErrorTypes.EntityNotFound);
+      expect(error.message).to.be.eq(ErrorTypes.ObjectNotFound);
     });
   });
 
